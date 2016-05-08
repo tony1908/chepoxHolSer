@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json();
 var packageInfo = require('./package.json');
 var havenondemand = require('havenondemand');
-var client = new havenondemand.HODClient("4eacd446-c06d-4f37-8724-e3a7e8d7c434")
+var client = new havenondemand.HODClient("4eacd446-c06d-4f37-8724-e3a7e8d7c434") 
 
 var app = express();
 
