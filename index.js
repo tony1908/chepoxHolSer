@@ -23,6 +23,7 @@ app.get('/api', function (req, res) {
 	  var len = (resp.body.language_iso639_2b != "UND") ? resp.body.language_iso639_2b : "SPA"
 	  var dat = {'text' : query, "language" : len}
 	  client.call('analyzesentiment', dat, function(err, resp, body) {
+	  	  console.log(resp.body)
 	  	  myJson.push({ sent: resp.body.aggregate.sentiment, lang: len });
 		  res.json({ sent: resp.body.aggregate.sentiment, lang: len });
 		})
