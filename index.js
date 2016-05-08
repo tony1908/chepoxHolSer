@@ -8,15 +8,6 @@ var client = new havenondemand.HODClient("4eacd446-c06d-4f37-8724-e3a7e8d7c434")
 
 var app = express();
 
-// var myJson={"players":[
-//             {"name":"Messi", "goals":8},            
-//             {"name":"Ronaldo", "goals":22},
-//             {"name":"Costa", "goals":20},
-//             {"name":"Neymar", "goals":13},
-//             {"name":"Arabi", "goals":6},
-//             {"name":"Bale", "goals":3},
-//             {"name":"Toquero", "goals":0}]};
-
 var myJson = []
 
 
@@ -42,6 +33,12 @@ app.get('/mens', function (req, res) {
 	console.log("entre")
 	res.contentType('application/json');
 	res.send(JSON.stringify(myJson));
+})
+
+app.get('/facesent', function (req, res) {
+	var query = req.query.sent
+	myJson.push({ sent: query, lang: "UND" });
+	res.json({status: "ok"})
 })
 
 
